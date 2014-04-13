@@ -28,9 +28,24 @@
 	</developers>
 	<properties>
 		<codehaus.jackson.version>1.9.0</codehaus.jackson.version>
+		<googlecode.flyway.version>1.7</googlecode.flyway.version>		
 		<org.jsoup.version>1.7.2</org.jsoup.version>
 		<way.base.version>1.0</way.base.version>
 	</properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.googlecode.flyway</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/QUESTIONARIO</url>
+                    <user>root</user>
+                    <password>123</password>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
 	        <groupId>br.com.objectos</groupId>
@@ -39,16 +54,11 @@
 		<dependency>
 			<groupId>br.com.objectos</groupId>
 			<artifactId>way-relational</artifactId>
-		</dependency>        
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>${codehaus.jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>${codehaus.jackson.version}</version>
-        </dependency>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.30</version>
+		</dependency>
     </dependencies>	
 </project>
