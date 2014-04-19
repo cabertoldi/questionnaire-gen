@@ -2,7 +2,7 @@
 	<parent>
 		<groupId>br.com.objectos</groupId>
 		<artifactId>parent</artifactId>
-		<version>20</version>
+		<version>21</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.pets</groupId>
@@ -37,7 +37,6 @@
             <plugin>
                 <groupId>com.googlecode.flyway</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>2.3</version>
                 <configuration>
                     <url>jdbc:mysql://localhost:3306/QUESTIONARIO</url>
                     <user>root</user>
@@ -66,11 +65,19 @@
 		<dependency>
 			<groupId>br.com.objectos</groupId>
 			<artifactId>way-sqlunit</artifactId>
-		</dependency>		
+		</dependency>
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>way-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>way-ui</artifactId>
+			<type>test-jar</type>
+		</dependency>			
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.30</version>
 		</dependency>
     </dependencies>	
 </project>
