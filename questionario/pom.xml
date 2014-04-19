@@ -47,6 +47,14 @@
         </plugins>
     </build>
     <dependencies>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>    
         <dependency>
 	        <groupId>br.com.objectos</groupId>
 	        <artifactId>way-base</artifactId>
@@ -55,6 +63,10 @@
 			<groupId>br.com.objectos</groupId>
 			<artifactId>way-relational</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>br.com.objectos</groupId>
+			<artifactId>way-sqlunit</artifactId>
+		</dependency>		
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
