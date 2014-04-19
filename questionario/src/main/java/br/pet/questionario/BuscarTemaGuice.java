@@ -26,7 +26,7 @@ class BuscarTemaGuice implements BuscarTema {
     return db.newSql()
 
         .add("select *")
-        .add("from RO_MERCADO.DEBENTURE_CARACTERISTICA")
+        .add("from QUESTIONARIO.TEMA")
 
         .andLoadWith(new TemaLoader());
   }
