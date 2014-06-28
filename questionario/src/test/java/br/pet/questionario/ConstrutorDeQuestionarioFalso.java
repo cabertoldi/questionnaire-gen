@@ -1,5 +1,8 @@
 package br.pet.questionario;
 
+/**
+ * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
+ */
 class ConstrutorDeQuestionarioFalso implements Questionario.Construtor {
 
   private int id;
