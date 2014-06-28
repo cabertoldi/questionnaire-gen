@@ -21,7 +21,7 @@ import br.com.objectos.way.base.sql.Credentials;
 import com.google.inject.AbstractModule;
 
 /**
- * @author mario.marques@objectos.com.br (Mario Marques Junior)
+ * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
  */
 public class ModuloQuestionnarieGen extends AbstractModule {
 

@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import br.com.objectos.way.relational.GeneratedKeyCallback;
 import br.com.objectos.way.relational.Insert;
 
+/**
+ * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
+ */
 class Questaojdbc implements Questao {
 
   private int id;
