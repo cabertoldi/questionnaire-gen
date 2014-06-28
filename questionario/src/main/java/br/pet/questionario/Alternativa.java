@@ -1,25 +1,20 @@
 package br.pet.questionario;
 
-import br.com.objectos.way.relational.Insertable;
+import br.com.objectos.way.relational.IsEntidade;
 
-public interface Alternativa extends Insertable{
+public interface Alternativa extends IsEntidade {
 
-	interface Construtor extends br.com.objectos.comuns.base.Construtor<Alternativa>{
+  interface Construtor extends br.com.objectos.comuns.base.Construtor<Alternativa> {
 
-		Questao getQuestao();
-		
-		String getDescricao();
-		
-		boolean isCorreta();
-		
-	}
-	
-	int getId();
-	
-	Questao getQuestao();
-	
-	String getDescricao();
-	
-	boolean isCorreta();
+    Questao getQuestao();
+
+    String getDescricao();
+
+    boolean isCorreta();
+
+  }
+
+  @Override
+  AlternativaJdbc toJdbc();
 
 }
