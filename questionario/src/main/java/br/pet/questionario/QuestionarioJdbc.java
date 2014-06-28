@@ -6,45 +6,30 @@ import java.sql.SQLException;
 import br.com.objectos.way.relational.GeneratedKeyCallback;
 import br.com.objectos.way.relational.Insert;
 
-public class QuestionarioJdbc implements Questionario {
-	
-	private int id;
-	private String titulo;
-	private Tema tema;
+class QuestionarioJdbc implements Questionario {
 
-	public QuestionarioJdbc(Construtor construtor) {
-		titulo = construtor.getTitulo();
-		tema = construtor.getTema();
-	}
+  private int id;
+  private final String descricao;
 
-	@Override
-	public Insert getInsert() {
-		return Insert.into("QUESTIONARIO")
-			.value("TITULO", titulo)
-			.value("TEMA_ID", tema.getId())
-			.onGeneratedKey(new GeneratedKeyCallback() {
-				
-				@Override
-				public void set(ResultSet rs) throws SQLException {
-					 id = rs.next() ? rs.getInt(1) : 0;
-				}
-			});
-	}
-	
-	void setId(int id) {
-		this.id = id;
-	}
+  public QuestionarioJdbc(Construtor construtor) {
+    descricao = construtor.getDescricao();
+  }
 
-	public int getId() {
-		return id;
-	}
+  @Override
+  public Insert getInsert() {
+    return Insert.into("QUESTIONARIO")
+        .onGeneratedKey(new GeneratedKeyCallback() {
 
-	public String getTitulo() {
-		return titulo;
-	}
+          @Override
+          public void set(ResultSet rs) throws SQLException {
+            id = rs.next() ? rs.getInt(1) : 0;
+          }
+        });
+  }
 
-	public Tema getTema() {
-		return tema;
-	}
+  @Override
+  public QuestionarioJdbc toJdbc() {
+    return this;
+  }
 
 }

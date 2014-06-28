@@ -6,56 +6,34 @@ import java.sql.SQLException;
 import br.com.objectos.way.relational.GeneratedKeyCallback;
 import br.com.objectos.way.relational.Insert;
 
-public class AlternativaJdbc implements Alternativa{
-	
-	private int id;
-	private String descricao;
-	private Questao questao;
-	private boolean correta;
+class AlternativaJdbc implements Alternativa {
 
-	public AlternativaJdbc(Construtor construtor) {
-		descricao = construtor.getDescricao();
-		questao = construtor.getQuestao();
-		correta = construtor.isCorreta();
-	}
+  private int id;
+  private final Questao questao;
+  private final String descricao;
+  private final boolean correta;
 
-	@Override
-	public Insert getInsert() {
-		return Insert.into("ALTERNATIVA")
-			.value("DESCRICAO", descricao)
-			.value("QUESTAO_ID", questao.getId())
-			.value("CORRETA", correta)
-			.onGeneratedKey(new GeneratedKeyCallback() {
-				
-				@Override
-				public void set(ResultSet rs) throws SQLException {
-					id = rs.next() ? rs.getInt(1) : 0;
-				}
-			});
-	}
+  public AlternativaJdbc(Construtor construtor) {
+    questao = construtor.getQuestao();
+    descricao = construtor.getDescricao();
+    correta = construtor.isCorreta();
+  }
 
-	void setId(int id){
-		this.id = id;
-	}
-	
-	@Override
-	public int getId() {
-		return id;
-	}
+  @Override
+  public Insert getInsert() {
+    return Insert.into("ALTERNATIVA")
+        .onGeneratedKey(new GeneratedKeyCallback() {
 
-	@Override
-	public Questao getQuestao() {
-		return questao;
-	}
+          @Override
+          public void set(ResultSet rs) throws SQLException {
+            id = rs.next() ? rs.getInt(1) : 0;
+          }
+        });
+  }
 
-	@Override
-	public String getDescricao() {
-		return descricao;
-	}
-
-	@Override
-	public boolean isCorreta() {
-		return correta;
-	}
+  @Override
+  public AlternativaJdbc toJdbc() {
+    return this;
+  }
 
 }

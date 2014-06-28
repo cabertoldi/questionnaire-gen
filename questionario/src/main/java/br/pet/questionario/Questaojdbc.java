@@ -6,45 +6,32 @@ import java.sql.SQLException;
 import br.com.objectos.way.relational.GeneratedKeyCallback;
 import br.com.objectos.way.relational.Insert;
 
-public class Questaojdbc implements Questao{
-	
-	private int id;
-	private String enunciado;
-	private Questionario questionario;
+class Questaojdbc implements Questao {
 
-	public Questaojdbc(Construtor construtor) {
-		enunciado = construtor.getEnunciado();
-		questionario = construtor.getQuestionario();
-	}
+  private int id;
+  private final Questionario questionario;
+  private final String enunciado;
 
-	@Override
-	public Insert getInsert() {
-		return Insert.into("QUESTAO")
-			.value("ENUNCIADO", enunciado)
-			.value("QUESTIONARIO_ID", questionario.getId())
-			.onGeneratedKey(new GeneratedKeyCallback() {
-				
-				@Override
-				public void set(ResultSet rs) throws SQLException {
-					id = rs.next() ? rs.getInt(1) : 0;
-				}
-			});
-	}
-	
-	void setId(int id) {
-		this.id = id;
-	}
+  public Questaojdbc(Construtor construtor) {
+    enunciado = construtor.getEnunciado();
+    questionario = construtor.getQuestionario();
+  }
 
-	public int getId() {
-		return id;
-	}
+  @Override
+  public Insert getInsert() {
+    return Insert.into("QUESTAO")
+        .onGeneratedKey(new GeneratedKeyCallback() {
 
-	public String getEnunciado() {
-		return enunciado;
-	}
+          @Override
+          public void set(ResultSet rs) throws SQLException {
+            id = rs.next() ? rs.getInt(1) : 0;
+          }
+        });
+  }
 
-	public Questionario getQuestionario() {
-		return questionario;
-	}
+  @Override
+  public Questaojdbc toJdbc() {
+    return this;
+  }
 
 }
