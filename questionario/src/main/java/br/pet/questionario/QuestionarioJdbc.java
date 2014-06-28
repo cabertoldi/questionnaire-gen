@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import br.com.objectos.way.relational.GeneratedKeyCallback;
 import br.com.objectos.way.relational.Insert;
 
+/**
+ * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
+ */
 class QuestionarioJdbc implements Questionario {
 
   private int id;

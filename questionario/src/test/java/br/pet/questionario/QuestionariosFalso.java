@@ -1,5 +1,8 @@
 package br.pet.questionario;
 
+/**
+ * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
+ */
 public class QuestionariosFalso {
 
   public static final Questionario QUESTIONARIO_1 = novo()

@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import br.com.objectos.way.relational.GeneratedKeyCallback;
 import br.com.objectos.way.relational.Insert;
 
+/**
+ * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
+ */
 class AlternativaJdbc implements Alternativa {
 
   private int id;
