@@ -1,19 +1,14 @@
 package br.pet.questionario;
 
-import br.com.objectos.way.relational.IsEntidade;
-
 /**
  * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
  */
-public interface Questionario extends IsEntidade {
+public interface Questionario {
 
-  interface Construtor extends br.com.objectos.comuns.base.Construtor<Questionario> {
+  interface Construtor extends br.pet.base.Construtor<Questionario> {
 
     String getDescricao();
 
   }
-
-  @Override
-  QuestionarioJdbc toJdbc();
 
 }
