@@ -1,13 +1,11 @@
 package br.pet.questionario;
 
-import br.com.objectos.way.relational.IsEntidade;
-
 /**
  * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
  */
-public interface Alternativa extends IsEntidade {
+public interface Alternativa {
 
-  interface Construtor extends br.com.objectos.comuns.base.Construtor<Alternativa> {
+  interface Construtor extends br.pet.base.Construtor<Alternativa> {
 
     Questao getQuestao();
 
@@ -16,8 +14,5 @@ public interface Alternativa extends IsEntidade {
     boolean isCorreta();
 
   }
-
-  @Override
-  AlternativaJdbc toJdbc();
 
 }
