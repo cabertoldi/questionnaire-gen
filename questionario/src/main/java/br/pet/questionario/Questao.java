@@ -1,7 +1,7 @@
 package br.pet.questionario;
 
 /**
- * @author carolene.bertoldi@objectos.com.br (Carolene Bertoldi)
+ * @author carolene.bertoldi@gmail.com (Carolene Bertoldi)
  */
 public interface Questao {
 
