@@ -1,10 +1,12 @@
-package br.pet.base;
+package models;
 
 /**
  * @author carolene.bertoldi@gmail.com (Carolene Bertoldi)
  */
-public interface Construtor<T> {
+enum QuestaoTipo {
 
-  T construir();
+  OBJETIVA,
+
+  DISCURSIVA
 
 }
