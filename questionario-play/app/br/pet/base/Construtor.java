@@ -1,4 +1,4 @@
-package base;
+package br.pet.base;
 
 /**
  * @author carolene.bertoldi@gmail.com (Carolene Bertoldi)
