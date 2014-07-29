@@ -3,7 +3,19 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /                           br.pet.questionario.controllers.Application.index()
+
+#Questionarios
+GET     /questionarios              br.pet.questionario.controllers.Questionarios.listar()
+
+GET     /questionarios/novo         br.pet.questionario.controllers.Questionarios.novo()
+POST    /questionarios              br.pet.questionario.controllers.Questionarios.salvar()
+
+GET     /questionarios/:id          br.pet.questionario.controllers.Questionarios.visualizar(id:Long)
+GET     /questionarios/:id/editar   br.pet.questionario.controllers.Questionarios.editar(id:Long)
+POST    /questionarios/:id          br.pet.questionario.controllers.Questionarios.atualizar(id:Long)
+
+POST    /questionarios/:id/remover  br.pet.questionario.controllers.Questionarios.remover(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

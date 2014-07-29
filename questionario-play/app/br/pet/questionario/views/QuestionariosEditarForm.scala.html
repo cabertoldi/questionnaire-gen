@@ -1,0 +1,18 @@
+@(id: Long)
+
+@import helper._
+
+@main ("Editar questionário") {
+    
+    <h1>Editar questionário</h1>
+    
+    @form(br.pet.questionario.controllers.routes.Questionarios.atualizar(id)) {
+        
+        <div class="actions">
+            <input type="submit" value="Atualizar" class="btn primary"> or 
+            <a href="@br.pet.questionario.controllers.routes.Questionarios.visualizar(id)" class="btn">Cancelar</a> 
+        </div>
+        
+    }
+    
+}
