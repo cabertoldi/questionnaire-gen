@@ -1,4 +1,4 @@
-@(id: Long)
+@(id: Long, questionarioForm: Form[br.pet.questionario.models.QuestionarioImpl])
 
 @import helper._
 
@@ -7,6 +7,12 @@
     <h1>Editar questionário</h1>
     
     @form(br.pet.questionario.controllers.routes.Questionarios.atualizar(id)) {
+    
+        <fieldset>
+        
+            @inputText(questionarioForm("descricao"), '_label -> "Descrição", '_help -> "")
+
+        </fieldset>
         
         <div class="actions">
             <input type="submit" value="Atualizar" class="btn primary"> or 

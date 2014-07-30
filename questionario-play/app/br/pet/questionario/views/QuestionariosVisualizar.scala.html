@@ -11,16 +11,21 @@
 	            <strong>Feito!</strong> @flash.get("success")
 	        </div>
 	    }
-        
-	    <table class="questionarios zebra-striped">
-	        <tbody>
-	            <tr>
-	                <td>Descrição:</td>
-	                <td>Questionário @id</td>
-	            </tr>
-	        </tbody>
-	    </table>
-        
+
+		<fieldset>
+
+			<dl class=" " id="descricao_field">
+				<dt>
+					<label for="descricao">Descrição</label>
+				</dt>
+				<dd>
+					<div id="descricao" name="descricao" >Questionário @id</div>
+				</dd>
+				<dd class="info"></dd>
+			</dl>
+
+		</fieldset>
+
         <div class="actions">
             <a href="@br.pet.questionario.controllers.routes.Questionarios.editar(id)" class="btn">Editar</a> ou
             <a href="@br.pet.questionario.controllers.routes.Questionarios.listar()" class="btn">Voltar</a> 
