@@ -12,20 +12,17 @@
 	        </div>
 	    }
 
-		<fieldset>
+        <fieldset>
 
-			<dl class=" " id="descricao_field">
-				<dt>
-					<label for="descricao">Descrição</label>
-				</dt>
-				<dd>
-					<div id="descricao" name="descricao" >Questionário @id</div>
-				</dd>
-				<dd class="info"></dd>
-			</dl>
+            <div class="clearfix">
+                <label for="descricao">Descrição</label>
+                <div id="descricao" name="descricao" class="view">
+                    Questionário @id
+                </div>
+            </div>
 
-		</fieldset>
-
+        </fieldset>
+         
         <div class="actions">
             <a href="@br.pet.questionario.controllers.routes.Questionarios.editar(id)" class="btn">Editar</a> ou
             <a href="@br.pet.questionario.controllers.routes.Questionarios.listar()" class="btn">Voltar</a> 
