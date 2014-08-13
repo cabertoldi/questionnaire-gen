@@ -1,4 +1,4 @@
-package br.pet.questionario;
+package br.pet.questionario.models;
 
 /**
  * @author carolene.bertoldi@gmail.com (Carolene Bertoldi)

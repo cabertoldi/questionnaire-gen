@@ -1,0 +1,27 @@
+@(questionarioForm: Form[br.pet.questionario.models.QuestionarioForm])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) } 
+
+@main("Criar questionário") {
+    
+    <h1>Criar questionário</h1>
+    
+    @form(br.pet.questionario.controllers.routes.Questionarios.salvar()) {
+    
+        <fieldset>
+        
+            @inputText(questionarioForm("descricao"), '_label -> "Descrição", '_help -> "")
+
+        </fieldset>
+    
+        
+        <div class="actions">
+            <input type="submit" value="Salvar" class="btn primary"> ou 
+            <a href="@br.pet.questionario.controllers.routes.Questionarios.listar()" class="btn">Cancelar</a> 
+        </div>
+        
+    }
+    
+}

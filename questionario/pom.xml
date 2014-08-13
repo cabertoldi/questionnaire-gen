@@ -1,9 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<groupId>br.com.objectos</groupId>
-		<artifactId>parent</artifactId>
-		<version>20</version>
-	</parent>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.pets</groupId>
 	<artifactId>questionario</artifactId>
@@ -13,42 +10,39 @@
 	<description> Gerador de questionários web </description>
 	<url> https://github.com/CaroleneBertoldi/questionnaire-gen </url>
 	<licenses>
-	    <license>
-	        <name>The Apache Software License, Version 2.0</name>
-	        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-	        <distribution>repo</distribution>
-	    </license>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
 	</licenses>
 	<developers>
-	       <developer>
-	           <id>cbertoldi</id>
-	           <name>Carolene Bertoldi</name>
-	           <email>carolene.bertoldi@gmail.com</email>
-	       </developer>
+		<developer>
+			<id>cbertoldi</id>
+			<name>Carolene Bertoldi</name>
+			<email>carolene.bertoldi@gmail.com</email>
+		</developer>
+		<developer>
+			<id>mmarques</id>
+			<name>Mario Marques Junior</name>
+			<email>m.mariojr@gmail.com</email>
+		</developer>
 	</developers>
 	<properties>
-		<codehaus.jackson.version>1.9.0</codehaus.jackson.version>
-		<org.jsoup.version>1.7.2</org.jsoup.version>
-		<way.base.version>1.0</way.base.version>
 	</properties>
-    <dependencies>
-        <dependency>
-	        <groupId>br.com.objectos</groupId>
-	        <artifactId>way-base</artifactId>
-        </dependency>
-		<dependency>
-			<groupId>br.com.objectos</groupId>
-			<artifactId>way-relational</artifactId>
-		</dependency>        
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>${codehaus.jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>${codehaus.jackson.version}</version>
-        </dependency>
-    </dependencies>	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<dependencies>
+	</dependencies>
 </project>
