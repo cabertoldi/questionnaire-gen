@@ -1,12 +1,10 @@
-@()
-
-@main ("Questionários") {
+@main("Questionários") {
     
     <h1 id="homeTitle">Questionários</h1>
 
     @if(flash.containsKey("success")) {
         <div class="alert-message warning">
-            <strong>Feito!</strong> @flash.get("success")
+            <strong>@flash.get("success")</strong>
         </div>
     } 
 

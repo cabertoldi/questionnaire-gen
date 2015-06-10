@@ -2,25 +2,27 @@
 
 @import helper._
 
-@main ("Visualizar questionário") {
+@main("Visualizar questionário") {
     
     <h1>Visualizar questionário</h1>
     
 	    @if(flash.containsKey("success")) {
 	        <div class="alert-message warning">
-	            <strong>Feito!</strong> @flash.get("success")
+	            <strong>@flash.get("success")</strong>
 	        </div>
 	    }
-        
-	    <table class="questionarios zebra-striped">
-	        <tbody>
-	            <tr>
-	                <td>Descrição:</td>
-	                <td>Questionário @id</td>
-	            </tr>
-	        </tbody>
-	    </table>
-        
+
+        <fieldset>
+
+            <div class="clearfix">
+                <label for="descricao">Descrição</label>
+                <div id="descricao" name="descricao" class="view">
+                    Questionário @id
+                </div>
+            </div>
+
+        </fieldset>
+         
         <div class="actions">
             <a href="@br.pet.questionario.controllers.routes.Questionarios.editar(id)" class="btn">Editar</a> ou
             <a href="@br.pet.questionario.controllers.routes.Questionarios.listar()" class="btn">Voltar</a> 

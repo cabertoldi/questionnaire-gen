@@ -1,7 +1,10 @@
 package br.pet.questionario.controllers;
 
+import static play.data.Form.form;
+import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import br.pet.questionario.models.QuestionarioForm;
 import br.pet.questionario.views.html.QuestionariosEditarForm;
 import br.pet.questionario.views.html.QuestionariosListar;
 import br.pet.questionario.views.html.QuestionariosNovoForm;
@@ -14,7 +17,8 @@ public class Questionarios extends Controller {
   }
 
   public static Result novo() {
-    return ok(QuestionariosNovoForm.render());
+    Form<QuestionarioForm> questionarioForm = form(QuestionarioForm.class);
+    return ok(QuestionariosNovoForm.render(questionarioForm));
   }
 
   public static Result salvar() {
@@ -27,7 +31,8 @@ public class Questionarios extends Controller {
   }
 
   public static Result editar(Long id) {
-    return ok(QuestionariosEditarForm.render(id));
+    Form<QuestionarioForm> questionarioForm = form(QuestionarioForm.class);
+    return ok(QuestionariosEditarForm.render(id, questionarioForm));
   }
 
   public static Result atualizar(Long id) {
