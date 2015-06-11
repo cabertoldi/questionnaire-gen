@@ -34,6 +34,18 @@ table.questionarios .descricao {
 table.questionarios .header a {
 }
 
+table.questoes em {
+    color: #aaa;
+}
+
+table.questoes .descricao {
+    width: 10%;
+    min-width: 100px;
+}
+
+table.questoes .header a {
+}
+
 #actions {
     position: relative;
 }

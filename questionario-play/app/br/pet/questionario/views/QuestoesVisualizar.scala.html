@@ -1,0 +1,35 @@
+@(id: Long)
+
+@import helper._
+
+@main("Visualizar questão") {
+    
+    <h1>Visualizar questão</h1>
+    
+	    @if(flash.containsKey("success")) {
+	        <div class="alert-message warning">
+	            <strong>@flash.get("success")</strong>
+	        </div>
+	    }
+
+        <fieldset>
+
+            <div class="clearfix">
+                <label for="descricao">Descrição</label>
+                <div id="descricao" name="descricao" class="view">
+                    Questão @id
+                </div>
+            </div>
+
+        </fieldset>
+         
+        <div class="actions">
+            <a href="@br.pet.questionario.controllers.routes.Questoes.editar(id)" class="btn">Editar</a> ou
+            <a href="@br.pet.questionario.controllers.routes.Questoes.listar()" class="btn">Voltar</a> 
+        </div>
+    
+    @form(br.pet.questionario.controllers.routes.Questoes.remover(id), 'class -> "topRight") {
+        <input type="submit" value="Remover" class="btn danger">
+    }
+    
+}

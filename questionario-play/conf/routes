@@ -17,8 +17,7 @@ POST    /questionarios/:id          br.pet.questionario.controllers.Questionario
 
 POST    /questionarios/:id/remover  br.pet.questionario.controllers.Questionarios.remover(id:Long)
 
-#Questôes
-
+#Questões
 GET     /questoes              		br.pet.questionario.controllers.Questoes.listar()
 
 GET     /questoes/novo         		br.pet.questionario.controllers.Questoes.novo()
