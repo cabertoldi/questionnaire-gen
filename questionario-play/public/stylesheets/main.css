@@ -69,4 +69,10 @@ table.questoes .header a {
     color: #666;
 }
 
+/* bootstrap custom */
+fieldset .view{margin-left:150px;padding-top:8px;}
+fieldset .clearfix{margin-bottom:18px;zoom:1;}fieldset .clearfix:before,fieldset .clearfix:after{display:table;content:"";zoom:1;*display:inline;}
+fieldset .clearfix:after{clear:both;}
+
+
 
