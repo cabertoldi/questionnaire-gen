@@ -3,16 +3,16 @@
     <h1 id="homeTitle">Questionários</h1>
 
     @if(flash.containsKey("success")) {
-        <div class="alert-message warning">
+        <div class="alert-warning">
             <strong>@flash.get("success")</strong>
         </div>
     } 
 
     <div id="actions">
-        <a class="btn success" id="add" href="@br.pet.questionario.controllers.routes.Questionarios.novo()">Criar questionário</a>
+        <a class="btn btn-default btn-success" id="add" href="@br.pet.questionario.controllers.routes.Questionarios.novo()">Criar questionário</a>
     </div>
-        
-    <table class="questionarios zebra-striped">
+    
+    <table class="questionarios table table-responsive table-bordered table-striped">
         <thead>
             <tr>
                 <th>Descrição</th>

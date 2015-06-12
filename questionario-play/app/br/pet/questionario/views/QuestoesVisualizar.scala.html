@@ -7,7 +7,7 @@
     <h1>Visualizar questão</h1>
     
 	    @if(flash.containsKey("success")) {
-	        <div class="alert-message warning">
+	        <div class="alert-warning">
 	            <strong>@flash.get("success")</strong>
 	        </div>
 	    }
@@ -24,12 +24,12 @@
         </fieldset>
          
         <div class="actions">
-            <a href="@br.pet.questionario.controllers.routes.Questoes.editar(id)" class="btn">Editar</a> ou
-            <a href="@br.pet.questionario.controllers.routes.Questoes.listar()" class="btn">Voltar</a> 
+            <a href="@br.pet.questionario.controllers.routes.Questoes.editar(id)" class="btn btn-default">Editar</a> ou
+            <a href="@br.pet.questionario.controllers.routes.Questoes.listar()" class="btn btn-default">Voltar</a> 
         </div>
     
     @form(br.pet.questionario.controllers.routes.Questoes.remover(id), 'class -> "topRight") {
-        <input type="submit" value="Remover" class="btn danger">
+        <input type="submit" value="Remover" class="btn btn-default btn-danger">
     }
     
 }
