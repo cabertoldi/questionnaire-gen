@@ -2,9 +2,9 @@
 
 @import helper._
 
-@main("Visualizar questionário") {
+@main("Visualizar questão") {
     
-    <h1>Visualizar questionário</h1>
+    <h1>Visualizar questão</h1>
     
 	    @if(flash.containsKey("success")) {
 	        <div class="alert-warning">
@@ -17,18 +17,18 @@
             <div class="clearfix">
                 <label for="descricao">Descrição</label>
                 <div id="descricao" name="descricao" class="view">
-                    Questionário @id
+                    Questão @id
                 </div>
             </div>
 
         </fieldset>
          
         <div class="actions">
-            <a href="@br.pet.questionario.controllers.routes.Questionarios.editar(id)" class="btn btn-default">Editar</a> ou
-            <a href="@br.pet.questionario.controllers.routes.Questionarios.listar()" class="btn btn-default">Voltar</a> 
+            <a href="@br.pet.questionario.controllers.routes.Questoes.editar(id)" class="btn btn-default">Editar</a> ou
+            <a href="@br.pet.questionario.controllers.routes.Questoes.listar()" class="btn btn-default">Voltar</a> 
         </div>
     
-    @form(br.pet.questionario.controllers.routes.Questionarios.remover(id), 'class -> "topRight") {
+    @form(br.pet.questionario.controllers.routes.Questoes.remover(id), 'class -> "topRight") {
         <input type="submit" value="Remover" class="btn btn-default btn-danger">
     }
     

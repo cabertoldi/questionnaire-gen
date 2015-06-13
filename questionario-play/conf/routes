@@ -17,5 +17,18 @@ POST    /questionarios/:id          br.pet.questionario.controllers.Questionario
 
 POST    /questionarios/:id/remover  br.pet.questionario.controllers.Questionarios.remover(id:Long)
 
+#Questões
+GET     /questoes              		br.pet.questionario.controllers.Questoes.listar()
+
+GET     /questoes/novo         		br.pet.questionario.controllers.Questoes.novo()
+POST    /questoes              		br.pet.questionario.controllers.Questoes.salvar()
+
+GET     /questoes/:id          		br.pet.questionario.controllers.Questoes.visualizar(id:Long)
+GET     /questoes/:id/editar   		br.pet.questionario.controllers.Questoes.editar(id:Long)
+POST    /questoes/:id          		br.pet.questionario.controllers.Questoes.atualizar(id:Long)
+
+POST    /questoes/:id/remover  		br.pet.questionario.controllers.Questoes.remover(id:Long)
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
