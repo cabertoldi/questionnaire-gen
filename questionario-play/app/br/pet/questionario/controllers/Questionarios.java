@@ -12,35 +12,35 @@ import br.pet.questionario.views.html.QuestionariosVisualizar;
 
 public class Questionarios extends Controller {
 
-  public static Result listar() {
+  public Result listar() {
     return ok(QuestionariosListar.render());
   }
 
-  public static Result novo() {
+  public Result novo() {
     Form<QuestionarioForm> questionarioForm = form(QuestionarioForm.class);
     return ok(QuestionariosNovoForm.render(questionarioForm));
   }
 
-  public static Result salvar() {
+  public Result salvar() {
     flash("success", "Questionário foi criado");
     return redirect(routes.Questionarios.listar());
   }
 
-  public static Result visualizar(Long id) {
+  public Result visualizar(Long id) {
     return ok(QuestionariosVisualizar.render(id));
   }
 
-  public static Result editar(Long id) {
+  public Result editar(Long id) {
     Form<QuestionarioForm> questionarioForm = form(QuestionarioForm.class);
     return ok(QuestionariosEditarForm.render(id, questionarioForm));
   }
 
-  public static Result atualizar(Long id) {
+  public Result atualizar(Long id) {
     flash("success", "Questionário foi atualizado");
     return redirect(routes.Questionarios.visualizar(id));
   }
 
-  public static Result remover(Long id) {
+  public Result remover(Long id) {
     flash("success", "Questionário foi removido");
     return redirect(routes.Questionarios.listar());
   }
